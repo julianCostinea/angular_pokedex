@@ -10,5 +10,7 @@
     (removePokemon)="onRemovePokemon($event)"
   ></app-pokemon-list>
 
-  <div>pagination here</div>
+  <app-pokemon-pagination
+    (pageChange)="getPokemon($event)"
+  ></app-pokemon-pagination>
 </div>

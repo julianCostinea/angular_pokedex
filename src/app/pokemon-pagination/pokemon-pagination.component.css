@@ -1,0 +1,23 @@
+.pokemonPagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pageButton {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pageButton:hover {
+  background-color: #ccc;
+}
+
+.selectedPage {
+  background-color: #ccc;
+}

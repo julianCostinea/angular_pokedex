@@ -1,0 +1,10 @@
+<div class="pokemonPagination">
+  <button
+    *ngFor="let page of numberOfPages"
+    (click)="changePage(page)"
+    class="pageButton"
+    [class.selectedPage]="currentPage === page"
+  >
+    {{ page }}
+  </button>
+</div>

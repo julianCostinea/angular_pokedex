@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { PokemonListComponent } from '../pokemon-list/pokemon-list.component';
 import { PokemonListService } from '../pokemon-list/pokemon-list.service';
 import { Pokemon } from '../types/pokemon';
+import { PokemonPaginationComponent } from '../pokemon-pagination/pokemon-pagination.component';
 
 @Component({
   selector: 'app-pokedex-container',
   standalone: true,
   templateUrl: './pokedex-container.component.html',
   styleUrl: './pokedex-container.component.css',
-  imports: [PokemonListComponent],
+  imports: [PokemonListComponent, PokemonPaginationComponent],
 })
 export class PokedexContainerComponent {
   constructor(private pokemonListService: PokemonListService) {}
@@ -16,8 +17,8 @@ export class PokedexContainerComponent {
   pokemons: Pokemon[] = [];
   unfilteredPokemon: Pokemon[] = [];
 
-  getPokemon(): void {
-    this.pokemonListService.getPokemon().subscribe((pokemonList) => {
+  getPokemon(page: number = 0): void {
+    this.pokemonListService.getPokemon(page).subscribe((pokemonList) => {
       this.pokemons = pokemonList.results;
       this.unfilteredPokemon = pokemonList.results;
     });
