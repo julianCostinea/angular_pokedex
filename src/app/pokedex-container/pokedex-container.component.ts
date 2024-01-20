@@ -14,11 +14,23 @@ export class PokedexContainerComponent {
   constructor(private pokemonListService: PokemonListService) {}
 
   pokemons: Pokemon[] = [];
+  unfilteredPokemon: Pokemon[] = [];
 
   getPokemon(): void {
     this.pokemonListService.getPokemon().subscribe((pokemonList) => {
       this.pokemons = pokemonList.results;
+      this.unfilteredPokemon = pokemonList.results;
     });
+  }
+
+  filterPokemon(event: KeyboardEvent): void {
+    const filter = (event.target as HTMLInputElement).value;
+
+    if (filter.length === 0) {
+      this.pokemons = this.unfilteredPokemon;
+      return;
+    }
+    this.pokemons = this.pokemons.filter((poke) => poke.name.includes(filter));
   }
 
   ngOnInit(): void {

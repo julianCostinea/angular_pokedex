@@ -2,6 +2,7 @@
   <input
     type="text"
     placeholder="Search pokemon..."
+    (keyup)="filterPokemon($event)"
   />
 
   <app-pokemon-list [pokemons]="pokemons"></app-pokemon-list>
