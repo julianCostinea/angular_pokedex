@@ -4,10 +4,14 @@
     placeholder="Search pokemon..."
     (keyup)="filterPokemon($event)"
   />
-
+  <span *ngIf="loading" class="loader"></span>
+  <h3 *ngIf="pokemons.length === 0 && !loading">
+    No pokemon match your criteria
+  </h3>
   <app-pokemon-list
     [pokemons]="pokemons"
     (removePokemon)="onRemovePokemon($event)"
+    *ngIf="!loading"
   ></app-pokemon-list>
 
   <app-pokemon-pagination
