@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Pokemon } from '../types/pokemon';
 import { NgFor } from '@angular/common';
 import { PokemonItemComponent } from '../pokemon-item/pokemon-item.component';
@@ -13,7 +13,5 @@ import { PokemonItemComponent } from '../pokemon-item/pokemon-item.component';
 export class PokemonListComponent {
   @Input() pokemons?: Pokemon[];
 
-  onRemovePokemon(pokemon: string): void {
-    this.pokemons = this.pokemons?.filter((poke) => poke.name !== pokemon);
-  }
+  @Output() removePokemon = new EventEmitter();
 }

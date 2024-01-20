@@ -23,6 +23,10 @@ export class PokedexContainerComponent {
     });
   }
 
+  onRemovePokemon(pokemon: string): void {
+    this.pokemons = this.pokemons?.filter((poke) => poke.name !== pokemon);
+  }
+
   filterPokemon(event: KeyboardEvent): void {
     const filter = (event.target as HTMLInputElement).value;
 

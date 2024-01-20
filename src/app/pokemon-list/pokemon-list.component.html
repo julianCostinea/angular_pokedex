@@ -3,7 +3,7 @@
     <li *ngFor="let pokemon of pokemons">
       <app-pokemon-item
         [pokemon]="pokemon"
-        (removePokemon)="onRemovePokemon(pokemon.name)"
+        (removePokemon)="removePokemon.emit(pokemon.name)"
       >
       </app-pokemon-item>
     </li>

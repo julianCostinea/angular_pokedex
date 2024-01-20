@@ -5,7 +5,10 @@
     (keyup)="filterPokemon($event)"
   />
 
-  <app-pokemon-list [pokemons]="pokemons"></app-pokemon-list>
+  <app-pokemon-list
+    [pokemons]="pokemons"
+    (removePokemon)="onRemovePokemon($event)"
+  ></app-pokemon-list>
 
   <div>pagination here</div>
 </div>
