@@ -1,8 +1,11 @@
 <div class="pokemonListContainer">
   <ul class="pokemonList">
-    <li *ngFor="let pokemon of pokemons" class="pokemon">
-      <h3>{{ pokemon.name }}</h3>
-      <button (click)="removePokemon(pokemon.name)">Remove</button>
+    <li *ngFor="let pokemon of pokemons">
+      <app-pokemon-item
+        [pokemon]="pokemon"
+        (removePokemon)="onRemovePokemon(pokemon.name)"
+      >
+      </app-pokemon-item>
     </li>
   </ul>
 </div>
