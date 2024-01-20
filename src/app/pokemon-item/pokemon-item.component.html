@@ -1,4 +1,7 @@
 <div class="pokemon" *ngIf="pokemon">
+  <div class="pokemonImageContainer">
+    <img [src]="pokemonImageUrl" [alt]="pokemon.name" />
+  </div>
   <h3>{{ pokemon.name }}</h3>
   <button (click)="removePokemon.emit(pokemon.name)">Remove</button>
 </div>
