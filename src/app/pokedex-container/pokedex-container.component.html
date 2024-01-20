@@ -4,6 +4,7 @@
     placeholder="Search pokemon..."
     (keyup)="filterPokemon($event)"
   />
+
   <span *ngIf="loading" class="loader"></span>
   <h3 *ngIf="pokemons.length === 0 && !loading">
     No pokemon match your criteria
